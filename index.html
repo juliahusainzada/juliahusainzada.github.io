@@ -266,11 +266,15 @@ h2 { font-size: clamp(1.8rem, 3.4vw, 2.3rem); line-height: 1.15; margin-bottom: 
 .visual svg { display: block; width: 100%; height: auto; }
 .feature h3 { font-size: 1.5rem; line-height: 1.25; }
 .feature p { color: var(--muted); margin-top: 12px; }
-.feature + .feature { margin-top: 72px; }
-.photo-link { display: block; }
-.photo-link img { display: block; width: 100%; aspect-ratio: 2 / 1; object-fit: cover; transition: transform .4s; }
+.photo-link { display: block; overflow: hidden; }
+.photo-link img { transition: transform .4s; }
 .photo-link:hover img { transform: scale(1.02); }
-.proj-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 16px !important; }
+.card .kicker { font-size: 0.72rem; margin-bottom: 6px; }
+.card .trophies { margin-top: 10px; }
+h2 + .cards { margin-top: 0; }
+.cv-box { background: linear-gradient(#DCE5EC 68.2%, #C9D4C6 68.2%) !important; }
+.cv-box #cv { aspect-ratio: 2 / 1; object-fit: contain; }
+.proj-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 12px !important; }
 .proj-links a { color: var(--accent); font-weight: 600; text-decoration: none; }
 .proj-links a:hover { text-decoration: underline; }
 #cv { display: block; width: 100%; height: auto; aspect-ratio: 640 / 440; }
@@ -572,32 +576,31 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   <section id="projects">
     <div class="wrap">
       <h2>Projects</h2>
-      <div class="feature">
-        <div class="visual">
-          <canvas id="cv" role="img" aria-label="Animated camera view: people appear only as anonymous pose skeletons, walking, sitting and waving, with live activity labels and an occupancy count. No video is stored."></canvas>
-        </div>
-        <div>
-          <p class="kicker">Current research · with Dr. Nada Attar</p>
-          <h3>Privacy-preserving computer vision</h3>
-          <p>Computer vision that understands how a space is used without ever seeing who is in it. Each person becomes an anonymous pose skeleton, and activity recognition, object detection and LLM reasoning turn that into real-time occupancy, movement and safety insights for campus staff, while raw video is never stored.</p>
-        </div>
-      </div>
-
-      <div class="feature">
-        <a class="visual photo-link" href="https://lnkd.in/p/guYUKdSs" target="_blank" rel="noopener" aria-label="Read the LinkedIn post about ClearStand winning SpartHill Hacks 2026">
-          <img loading="lazy" decoding="async" src="assets/photos-clearstand.webp" alt="The ClearStand team and fellow winners holding certificates at SpartHill Hacks 2026, IBM AI Challenge">
-        </a>
-        <div>
-          <p class="kicker">SpartHill Hacks · IBM AI Challenge · Oct 2026</p>
-          <h3>ClearStand: Agentic AI Governance Platform</h3>
-          <ul class="trophies"><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /> <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /> <path d="M4 22h16" /> <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /> <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" /> <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" /> </svg><span>1st Place · Best Overall Project · 175+ participants</span></li></ul>
-          <p>A multi-agent platform, built in under 24 hours, that audits GitHub repos for ethics, transparency and accessibility risks and drafts fixes for developers to approve. It ran ~3x faster and more accurately than a general-purpose AI assistant. I co-architected it and built the Ethical Agent, which uses RAG to check code against 1,800+ AI governance risks.</p>
-          <div class="tags"><span class="tag">Multi-agent systems</span><span class="tag">RAG</span><span class="tag">IBM Granite</span><span class="tag">ChromaDB</span><span class="tag">LLMs</span></div>
-          <p class="proj-links"><a href="https://lnkd.in/gcHzYu97" target="_blank" rel="noopener">Explore ClearStand ↗</a><a href="https://lnkd.in/p/guYUKdSs" target="_blank" rel="noopener">Read the post ↗</a></p>
-        </div>
-      </div>
-
       <div class="cards">
+        <article class="card">
+          <div class="visual">
+            <a class="photo-link" href="https://lnkd.in/p/guYUKdSs" target="_blank" rel="noopener" aria-label="Read the LinkedIn post about ClearStand winning SpartHill Hacks 2026"><img loading="lazy" decoding="async" class="shot-img" src="assets/photos-clearstand.webp" alt="The ClearStand team and fellow winners holding certificates at SpartHill Hacks 2026, IBM AI Challenge"></a>
+          </div>
+          <div class="body">
+            <p class="kicker">SpartHill Hacks · IBM AI Challenge · Oct 2026</p>
+            <h3>ClearStand: Agentic AI Governance Platform</h3>
+            <ul class="trophies"><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /> <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /> <path d="M4 22h16" /> <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /> <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" /> <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" /> </svg><span>1st Place · Best Overall Project · 175+ participants</span></li></ul>
+            <p>A multi-agent platform, built in under 24 hours, that audits GitHub repos for ethics, transparency and accessibility risks and drafts fixes for developers to approve. It ran ~3x faster and more accurately than a general-purpose AI assistant. I co-architected it and built the Ethical Agent, which uses RAG to check code against 1,800+ AI governance risks.</p>
+            <p class="proj-links"><a href="https://lnkd.in/gcHzYu97" target="_blank" rel="noopener">Explore ClearStand ↗</a><a href="https://lnkd.in/p/guYUKdSs" target="_blank" rel="noopener">Read the post ↗</a></p>
+            <div class="tags"><span class="tag">Multi-agent systems</span><span class="tag">RAG</span><span class="tag">IBM Granite</span><span class="tag">ChromaDB</span><span class="tag">LLMs</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="visual cv-box">
+            <canvas id="cv" role="img" aria-label="Animated camera view: people appear only as anonymous pose skeletons, walking, sitting and waving, with live activity labels and an occupancy count. No video is stored."></canvas>
+          </div>
+          <div class="body">
+            <p class="kicker">Current research · with Dr. Nada Attar</p>
+            <h3>Privacy-preserving computer vision</h3>
+            <p>Computer vision that understands how a space is used without ever seeing who is in it. Each person becomes an anonymous pose skeleton, and activity recognition, object detection and LLM reasoning turn that into real-time occupancy, movement and safety insights for campus staff, while raw video is never stored.</p>
+            <div class="tags"><span class="tag">Computer vision</span><span class="tag">Activity recognition</span><span class="tag">Object detection</span><span class="tag">LLMs</span></div>
+          </div>
+        </article>
         <article class="card">
           <div class="visual">
             <svg viewBox="0 0 480 240" role="img" aria-label="Diagram: job postings pass through TF-IDF and a classifier, and suspicious ones are flagged, beside an ROC curve">
